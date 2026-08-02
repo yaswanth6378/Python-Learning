@@ -1,0 +1,165 @@
+
+SPEAKER: Well, hello, one and all, and welcome to our short on lists.
+Now, we'll be exploring how we can store information in certain orders
+within Python.
+And I have here a game called Super Mario Kart, which,
+if you're not familiar, is a racing game for the Nintendo Entertainment System
+way back in the, I don't know, the '90s or so.
+And the idea is you would play as Mario, Luigi, Princess Peach, and race
+to get a certain place in the race, whether it was first, second, third,
+first, or fourth, whatever it was.
+We're going to make a list here to represent the racers and their place
+when they cross the finish line here.
+So I'll go to my terminal here and I'll go ahead and code results.py.
+And to make a list in python, I can think
+of how I want to store these racers.
+Maybe Mario came first, followed by Luigi.
+So Mario in first place, Luigi in second place.
+I could make a list in Python by first giving it some kind of name.
+So here, I'll give this list the name results, just like this.
+Results.
+And I'll say results =, in this case, well, a list.
+And a list in Python is denoted by these brackets
+here, these square brackets, opening and closing.
+Now, within these two brackets, I can actually place this information
+in the order I want it to be.
+So first, I could place Mario, saying Mario came first
+in this particular race, followed by, in this case, Luigi, just like this.
+And notice how each of these elements is separated by a comma.
+So Mario came first, followed by Luigi.
+So here, I've created a list, just explicitly on my own.
+I made a list, add the elements, and so on.
+But often, in Python, you might have a list
+you want to dynamically add to as your program runs.
+Here, I've initialized the list, but how could
+I keep adding more racers in this case?
+Well, let's say after Mario and Luigi comes Princess Peach.
+So I could, if I wanted to add on to this list, use a method called append.
+Append adds a new element to the end of this list here.
+So I could try results.append.
+I take my name of my list, use dot, and then append to add on some new element
+at the end of this list.
+And back in the Super Nintendo Entertainment System era,
+Princess Peach was actually just called Princess.
+So I'll use that name here, and I'll add the Princess to our list here,
+saying that she came in third.
+Now, let's see where we're going here.
+So if I were to print the results, I can use print here and call print results.
+I can then run python results.py, and down below, I'll
+see Mario, Luigi, and Princess, so Mario in first place, Luigi in second place,
+and Princess in third place so far.
+Well, maybe, as the race goes on, we have more racers who finish.
+So I could keep appending if I wanted to.
+I could say results.append.
+And maybe after Princess comes, let's say, Yoshi, another player
+you can play in this game.
+After Yoshi comes Koopa Troopa.
+And then after Koopa Troopa comes, let's say, Toad.
+So these are our results.
+I'll go ahead and run python results.py, and now, we'll
+see our results for the first six finishers, again, Mario in first place,
+Luigi in second, Princess in third, and the rest following thereafter.
+Now, we could, if we wanted to try to add more than one racer at a time.
+Maybe we get the results for Bowser and Donkey Kong, Jr.,
+at a pretty similar time, so we could try to add both of them
+at once to our list.
+One way to do this would be as follows.
+I could go ahead and say results.append and add on, maybe, a list to my list.
+I could try adding on in this case, Bowser, followed by Donkey Kong, Jr.
+And hopefully, what we'll see is that these two elements, these two
+racers, Bowser and Donkey Kong, get added at the end of our list
+all at once.
+But let's see.
+If I were to run python results.py, well, we'll see here--
+we'll see here that we still have our first six or so finishers,
+but then at the end, I'm noticing that Bowser and Donkey Kong, Jr., well
+they're added into our list, but they seem to be inside of a list themselves.
+Notice the curly brackets around their names there.
+So how could we fix this?
+Well, if we want to add on to our list using a list itself,
+we can't use append.
+Append actually goes ahead and adds the list itself to our list.
+So why don't go ahead and remove this?
+I'll say results.remove, which is another method I
+can use to remove items.
+And I can give as input to remove the list itself.
+And why don't we do this instead?
+I'll say results.extend.
+results.extend.
+And I can give extend, now, a list, but it will really
+take each element of that list and append it to, in this case,
+my original list called results.
+So to be clear, we're starting, now, with a list of two racers who finished,
+Mario and Luigi.
+We're adding in Princess, Yoshi, Koopa Troopa, and Toad, each individually.
+We tried to add the list of Bowser and Donkey Kong, Jr.,
+but we realized we can't use append for that, so we removed them instead.
+And now, we'll try extending our list, which
+will take each of Bowser and Donkey Kong, Jr.,
+and add them individually to our results list here.
+So let's try this.
+I'll run python of results.py.
+And hopefully, I'll see down below that we can, in fact, see all eight,
+now, of our finishers each on our list with no sublists, if you will,
+inside of our one larger list.
+So here is an example of our list.
+Now, we've added racers to it.
+What more can we do with lists?
+Well, let's go ahead and try to maybe take our list as it exists down here--
+I can really just copy and paste this.
+Actually, let me not copy/paste.
+I'll come back up here and I will do results = I'll
+type in Mario, Luigi, Princess, Yoshi, Koopa Troopa, Toad, Bowser, and Donkey
+Kong, Jr. So it's a bit of a long list we have up here.
+But this will enable us to see a few more features of lists as well.
+So one other one we want to be familiar with
+is just getting a sense for what remove might actually do here.
+So here, I have a list where Bowser is clearly part of this list.
+Bowser looks like he's in seventh place in this race.
+But I could remove Bowser entirely.
+I could say results.remove and then give as input Bowser.
+And this remove method will actually search through my list
+and find the first instance of Bowser and remove that element as well.
+So I'll run python of results.py, and we'll see down below
+that Bowser is no longer in our race.
+But let's say Bowser tries to cheat the system a little bit
+and we remove Bowser, but we later go on and try to add Bowser back in.
+Well, we saw, with results.append, if I were to append Bowser,
+Bowser would show up at the end of our list, in this case, in eighth place,
+but we don't really want that for Bowser.
+Bowser would, of course, prefer to be in first place.
+So I could try this.
+I could try a new method, one called insert.
+And insert takes as its first argument the index at which
+I want to insert some given element.
+So recall how our lists are actually indexed from 0.
+0 is the first element, 1 is the second element, and so on and so forth.
+So for instance, Mario here is at the zeroth index, Luigi at the first index,
+Princess at the second index.
+So if I wanted Bowser to sneakily move up to first place,
+I could try to insert Bowser, of course, at the zeroth index
+and say as the second argument the actual element I want to introduce,
+so Bowser in this case.
+So what have we done?
+We've had our list of results up here with Bowser in seventh.
+We've removed Bowser, but then later on, we
+go back and insert Bowser in first, or at the zeroth index as well.
+Let's try printing our results down below,
+and we'll see that Bowser appears, now, to be in first place
+at the zeroth index of our list.
+Now, one more thing we can do with lists, one more method to consider here,
+is one called reverse.
+In fact, I can call results.reverse if I wanted
+to flip the standings a little bit, turn whoever is in eighth into first, whoever
+is in first into eighth.
+And I could actually run this now and see the result.
+And we'll SEE Our list has been reversed.
+We have Donkey Kong, Jr., now in first, who was previously in last place,
+and Bowser, who was previously in first place, is now here in first.
+So these are a few methods-- be familiar with as you go off
+and do work with lists.
+We've seen here append, we've seen extend, we've seen remove,
+and we've seen insert.
+And of course, at the end here, we've seen reverse.
+That's it for this short on lists.
+We'll see you next time.
